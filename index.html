@@ -14,7 +14,7 @@
 <body class="bg-violet-950 overflow-x-hidden font-Manrope">
     <!--Navbar-->
     <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
-        <img src="./images/Adithya-Logo.png" alt="logo" class="w-24 cursor-pointer mr-14 ">
+        <a href="#top"><img src="./images/Adithya-Logo.png" alt="logo" class="w-24 cursor-pointer mr-14 "></a>
         <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-gradient-to-l from-[#b820e6] to-[#da7d20] backdrop-blur text-white">
             <li><a href="#top" class="hover:text-black">Home</a></li>
             <li><a href="#about" class="hover:text-black">About Me</a></li>
@@ -228,13 +228,14 @@
         <h2 class="text-center text-5xl">Contact Me ?</h2>
         <p class="text-center max-w-2xl mx-auto mt-5 mb-12">Get in touch with me easily by sending a message!</p>
 
-        <form action="" class="max-w-2xl mx-auto ">
+        <form action="https://api.web3forms.com/submit" method="POST" class="max-w-2xl mx-auto ">
+            <input type="hidden" name="access_key" value="9e41b104-1570-4d8c-97eb-52634f3fa118">
             <div class="grid grid-cols-2 gap-6 mt-10 mb-8">
-                <input type="text"  placeholder="Enter Your Name" class="flex-1 p-3 outline-none rounded-md bg-blue-700/65 backdrop-blur">
-                <input type="email"  placeholder="Enter Your Email" class="flex-1 p-3 outline-none rounded-md bg-blue-700/65 backdrop-blur">
+                <input type="text" required name="name" placeholder="Enter Your Name" class="flex-1 p-3 outline-none rounded-md bg-blue-700/65 backdrop-blur">
+                <input type="email" required name="email" placeholder="Enter Your Email" class="flex-1 p-3 outline-none rounded-md bg-blue-700/65 backdrop-blur">
             </div>
-            <textarea rows="6" placeholder="Enter your message" class="w-full p-4 outline-none rounded-md bg-blue-700/65 backdrop-blur"></textarea>
-            <button class="py-3 px-8 mt-4 w-max flex items-center justify-between gap-2 mx-auto bg-gradient-to-r from-[#b820e6] to-[#da7d20]
+            <textarea rows="6" name="message" required placeholder="Enter your message" class="w-full p-4 outline-none rounded-md bg-blue-700/65 backdrop-blur"></textarea>
+            <button type="submit" class="py-3 px-8 mt-4 w-max flex items-center justify-between gap-2 mx-auto bg-gradient-to-r from-[#b820e6] to-[#da7d20]
             backdrop-blur border rounded-full hover:-translate-y-1 duration-500 hover:text-black">Send</button>
         </form>
         </div>
@@ -288,6 +289,7 @@
                 navLinks.classList.add('bg-gradient-to-l','from-[#b820e6]','to-[#da7d20]','backdrop-blur','rounded-full');
             }
         })        
+
     </script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
