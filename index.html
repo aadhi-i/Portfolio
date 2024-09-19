@@ -7,8 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./tailwind.config.js"></script>
     <link rel="shortcut icon" href="#">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 </head>
-<body class="bg-violet-950 overflow-x-hidden">
+<body class="bg-violet-950 overflow-x-hidden font-Manrope">
     <!--Navbar-->
     <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
         <img src="./images/Adithya-Logo.png" alt="logo" class="w-24 cursor-pointer mr-14 ">
@@ -20,7 +23,8 @@
         </ul>
         <!--Connect Linkedin Button-->
         <div class="flex items-center gap-4 hover:-translate-y-1 duration-500">
-            <a href="https://www.linkedin.com/in/adithya-s-nair-63153626b" class="hidden lg:flex items-center gap-3 px-8 py-2.5 border border-gray-600 bg-gray-800/50 backdrop-blur hover:bg-[#fcf4ff]/20 hover:-translate-y-1 duration-500 rounded-full ml-4 text-white">Connect<ion-icon name="logo-linkedin" class="w-10"></ion-icon></a>
+            <a href="https://www.linkedin.com/in/adithya-s-nair-63153626b" class="hidden lg:flex items-center gap-3 px-6 py-2.5 border border-gray-600 bg-gray-800/50 backdrop-blur 
+            hover:bg-[#fcf4ff]/20 hover:-translate-y-1 duration-500 rounded-full ml-4 text-white">Connect<ion-icon name="logo-linkedin" class="w-10"></ion-icon></a>
             
             <!--Menu Button-->
             <button class="block md:hidden ml-3" onclick="openMenu()">
@@ -29,7 +33,7 @@
         </div>
 
         <!--For Mobile View-->
-        <ul id="sideBar" class="flex md:hidden flex-col gap-4 py-20 px-5 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-[#b820e6] transition duration-500 text-white">
+        <ul id="sideBar" class="flex md:hidden flex-col gap-4 py-20 px-5 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-gradient-to-l from-[#b820e6] to-[#da7d20] transition duration-500 text-white">
             
             <!--Close Menu Button-->
             <div class="absolute right-5 top-6" onclick="closeMenu()">
@@ -40,6 +44,7 @@
             <li><a href="#about" onclick="closeMenu()">About Me</a></li>
             <li><a href="#project" onclick="closeMenu()">My Projects</a></li>
             <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            <li><a href="https://www.linkedin.com/in/adithya-s-nair-63153626b">Connect<ion-icon name="logo-linkedin" class="w-10"></ion-icon></a></li>
         </ul>
     </nav>
     <!--Nav done here-->
@@ -77,11 +82,11 @@
 
             <!--Right-->
             <div class="flex-1">
-                <p class="mb-10 max-w-2xl font-semibold">Hello World,<br>
+                <p class="mb-10 max-w-2xl font-semibold">Hello World,<br><br>
 
                     I'm an aspiring developer who is in search of more technological knowledge. <br>I have already set my sail in the ocean of tech by self-learning and creating projects.
                     Understanding Data Structures and Algorithms was the most valuable knowledge I have gained. It always kept my tech life challenging.
-                    And thanks to my OCD I always keep my code clean and readable, <br>I literally can't overlook a misplaced piece of code !
+                    <br>And thanks to my OCD I always keep my code clean and readable, I literally can't overlook a misplaced piece of code !
                     
                     I have done and contributed to few projects on PHP Web development.
                     I am familiar with Core Java and OOPs.
@@ -89,7 +94,7 @@
                     <br>
                     Looking forward to how far this tech journey can take me...</p>
                     
-                    <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl">
+                    <ul class="grid grid-cols-1 sm:grid-cols-auto gap-6 max-w-3xl">
 
                         <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff]/20 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#fff]">
                             <ion-icon name="code-slash-outline" class="mt-3"></ion-icon>
@@ -149,7 +154,7 @@
         <h2 class="text-center text-5xl">My Latest Projects</h2>
         <p class="text-center max-w-2xl mx-auto mt-5 mb-12">Welcome to My Portfolio! Explore a collection of projects showcasing my expertise!</p>
         <!--Project 1-->
-        <div class="grid grid-cols-4 my-10 gap-5">
+        <div class="grid sm:grid-cols-auto my-10 gap-5">
             <div class="aspect-square bg-[url(./images/weather.png)] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
                 <a href="https://aadhi22.pythonanywhere.com/">
                 <div class="bg-gradient-to-r from-[#b820e6]/70 backdrop-blur w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
@@ -210,17 +215,18 @@
             </div>
             <!--ends-->
         </div>
-        <a href="https://github.com/aadhi-i" class="w-max flex items-center justify-center gap-2 text-gray-300 
-        bg-gradient-to-r from-[#b820e6] to-[#da7d20]/70 backdrop-blur rounded-full py-3 px-10 mx-auto my-20 text-xl 
+        <a href="https://github.com/aadhi-i" class="w-max flex items-center justify-center gap-2 text-gray-300 border
+        bg-gradient-to-r from-[#b820e6] to-[#da7d20] backdrop-blur rounded-full py-3 px-10 mx-auto my-20 text-xl 
         hover:-translate-y-1 duration-500 hover:text-black">Show More</a>
     </div>
     <!--My projects completed-->
 
     <!--Contact-->
-    <div id="contact" class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/contact-bg.jpg')] bg-no-repeat bg-[length:90%_auto] bg-center text-white">
+    <div id="contact" class="w-full px-[12%] py-10 scroll-mt-20  text-white">
+        <div class="w-full rounded-lg p-4 bg-gradient-to-r from-[#6ff7e8] to-[#1f7ea1]">
         <h4 class="text-center mb-2 text-lg">How to</h4>
         <h2 class="text-center text-5xl">Contact Me ?</h2>
-        <p class="text-center max-w-2xl mx-auto mt-5 mb-12">Get in touch with me just by sending a message!</p>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12">Get in touch with me easily by sending a message!</p>
 
         <form action="" class="max-w-2xl mx-auto ">
             <div class="grid grid-cols-2 gap-6 mt-10 mb-8">
@@ -228,24 +234,41 @@
                 <input type="email"  placeholder="Enter Your Email" class="flex-1 p-3 outline-none rounded-md bg-blue-700/65 backdrop-blur">
             </div>
             <textarea rows="6" placeholder="Enter your message" class="w-full p-4 outline-none rounded-md bg-blue-700/65 backdrop-blur"></textarea>
-            <button class="py-3 px-8 mt-4 w-max flex items-center justify-between gap-2 mx-auto bg-gradient-to-r from-[#b820e6] to-[#da7d20]/70 
-            backdrop-blur rounded-full hover:-translate-y-1 duration-500 hover:text-black">Send</button>
+            <button class="py-3 px-8 mt-4 w-max flex items-center justify-between gap-2 mx-auto bg-gradient-to-r from-[#b820e6] to-[#da7d20]
+            backdrop-blur border rounded-full hover:-translate-y-1 duration-500 hover:text-black">Send</button>
         </form>
-           
+        </div>
     </div>
     <!--Contact ends here-->
 
     <!--Footer-->
     <div class="mt-20">
-        <div class="text-center">
+        <div class="text-center text-white">
+            <img src="./images/Adithya-Logo.png" alt="" class="w-28 mx-auto mb-2">
+            <div class="w-max flex items-center gap-2 mx-auto">
+                <ion-icon name="mail"></ion-icon>
+                adithyasnair25@gmail.com
+            </div>
+        </div>
 
+        <div class="text-center text-white sm:flex items-center justify-between border-t border-gray-300 mx-[10%] mt-12 py-6">
+            <p>© 2024 Adithya S Nair. All Rights Reserved</p>
+            <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+                <li><a href="https://www.linkedin.com/in/adithya-s-nair-63153626b"><ion-icon name="logo-linkedin"></ion-icon> LinkedIn</a></li>
+                <li><a href="https://github.com/aadhi-i"><ion-icon name="logo-github"></ion-icon> GitHub</a></li>
+                <li><a href="https://x.com/adithyasnair33?t=sg-79s_7Iojjn2wJQvkTig&s=09"><ion-icon name="logo-twitter"></ion-icon> Twitter</a></li>
+            </ul>
         </div>
     </div>
 
-    <!--Giving Function to the Menu Button-->
+    
     <script>
+        
         const sideBar= document.querySelector('#sideBar');
+        const navBar= document.querySelector("nav");
+        const navLinks= document.querySelector("nav ul");
 
+        //Giving Function to the Menu Button
         function openMenu(){
             sideBar.style.transform='translateX(-16rem)';
         }
@@ -253,6 +276,18 @@
         function closeMenu(){
             sideBar.style.transform='translateX(16rem)';
         }
+
+        //navbar effect on scroll
+        window.addEventListener('scroll',()=>{
+            if(scrollY > 50){
+                navBar.classList.add('bg-violet-900/40','backdrop-blur','shadow-sm');
+                navLinks.classList.remove('bg-gradient-to-l','from-[#b820e6]','to-[#da7d20]','backdrop-blur','rounded-full');
+            }
+            else{
+                navBar.classList.remove('bg-violet-900/40','backdrop-blur','shadow-sm');
+                navLinks.classList.add('bg-gradient-to-l','from-[#b820e6]','to-[#da7d20]','backdrop-blur','rounded-full');
+            }
+        })        
     </script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
