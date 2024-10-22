@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adithya S Nair-Blogs</title>
+    <link rel="icon" type="image/x-icon" href="./images/Adithya-Profile.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <link rel="shortcut icon" href="#">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-violet-950 overflow-x-hidden font-Manrope">
+    <!--Navbar-->
+    <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+        <a href="#top"><img src="./images/Adithya-Logo.png" alt="logo" class="w-24 cursor-pointer mr-14 "></a>
+        <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-gradient-to-l from-[#b820e6] to-[#da7d20] backdrop-blur text-white">
+            <li><a href="index.html" class="hover:text-black">Home</a></li>
+            <li><a href="index.html#about" class="hover:text-black">About Me</a></li>
+            <li><a href="index.html#project" class="hover:text-black">My Projects</a></li>
+            <li><a href="blogs.html" class="hover:text-black">Blogs</a></li>
+            <li><a href="index.html#contact" class="hover:text-black">Contact</a></li>
+        </ul>
+        <!--Connect Linkedin Button-->
+        <div class="flex items-center gap-4 hover:-translate-y-1 duration-500">
+            <a href="https://www.linkedin.com/in/adithya-s-nair-63153626b" class="hidden lg:flex items-center gap-3 px-6 py-2.5 border border-gray-600 bg-gray-800/50 backdrop-blur 
+            hover:bg-[#fcf4ff]/20 hover:-translate-y-1 duration-500 rounded-full ml-4 text-white">Connect<ion-icon name="logo-linkedin" class="w-10"></ion-icon></a>
+            
+            <!--Menu Button-->
+            <button class="block md:hidden ml-3" onclick="openMenu()">
+                <ion-icon class="w-10 text-white" name="grid-outline"></ion-icon>
+            </button>
+        </div>
+
+        <!--For Mobile View-->
+        <ul id="sideBar" class="flex md:hidden flex-col gap-4 py-20 px-5 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-gradient-to-l from-[#b820e6] to-[#da7d20] transition duration-500 text-white">
+            
+            <!--Close Menu Button-->
+            <div class="absolute right-5 top-6" onclick="closeMenu()">
+                <ion-icon class="w-10 cursor-pointer" name="close-outline"></ion-icon>
+            </div>
+            
+            <li><a href="index.html#top" onclick="closeMenu()">Home</a></li>
+            <li><a href="index.html#about" onclick="closeMenu()">About Me</a></li>
+            <li><a href="index.html#project" onclick="closeMenu()">My Projects</a></li>
+            <li><a href="blogs.html" onclick="closeMenu()">Blogs</a></li>
+            <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
+            <li><a href="https://www.linkedin.com/in/adithya-s-nair-63153626b">Connect<ion-icon name="logo-linkedin" class="w-10"></ion-icon></a></li>
+        </ul>
+    </nav>
+    <!--Nav done here-->
+
+    <!--Header Section-->
+    <div class="w-11/12 max-w-3xl text-center text-white mx-auto h-screen flex flex-col items-center justify-center gap-4">
+        <h2 class="flex items-center gap-2 text-xl md:text-2xl mb-1">Coming Soon... Stay tuned !!</h2>
+    </div>
+    <!--Header completed-->
+
+    
+
+    <!--Footer-->
+    <div class="mt-20">
+        <div class="text-center text-white">
+            <img src="./images/Adithya-Logo.png" alt="" class="w-28 mx-auto mb-2">
+            <div class="w-max flex items-center gap-2 mx-auto">
+                <ion-icon name="mail"></ion-icon>
+                adithyasnair25@gmail.com
+            </div>
+        </div>
+
+        <div class="text-center text-white sm:flex items-center justify-between border-t border-gray-300 mx-[10%] mt-12 py-6">
+            <p>© 2024 Adithya S Nair. All Rights Reserved</p>
+            <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+                <li><a href="https://www.linkedin.com/in/adithya-s-nair-63153626b"><ion-icon name="logo-linkedin"></ion-icon> LinkedIn</a></li>
+                <li><a href="https://github.com/aadhi-i"><ion-icon name="logo-github"></ion-icon> GitHub</a></li>
+                <li><a href="https://x.com/adithyasnair33?t=sg-79s_7Iojjn2wJQvkTig&s=09"><ion-icon name="logo-twitter"></ion-icon> Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <script>
+        
+        const sideBar= document.querySelector('#sideBar');
+        const navBar= document.querySelector("nav");
+        const navLinks= document.querySelector("nav ul");
+
+        //Giving Function to the Menu Button
+        function openMenu(){
+            sideBar.style.transform='translateX(-16rem)';
+        }
+
+        function closeMenu(){
+            sideBar.style.transform='translateX(16rem)';
+        }
+
+        //navbar effect on scroll
+        window.addEventListener('scroll',()=>{
+            if(scrollY > 50){
+                navBar.classList.add('bg-violet-900/40','backdrop-blur','shadow-sm');
+                navLinks.classList.remove('bg-gradient-to-l','from-[#b820e6]','to-[#da7d20]','backdrop-blur','rounded-full');
+            }
+            else{
+                navBar.classList.remove('bg-violet-900/40','backdrop-blur','shadow-sm');
+                navLinks.classList.add('bg-gradient-to-l','from-[#b820e6]','to-[#da7d20]','backdrop-blur','rounded-full');
+            }
+        })        
+
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

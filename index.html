@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adithya S Nair</title>
+    <link rel="icon" type="image/x-icon" href="./images/Adithya-Profile.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./tailwind.config.js"></script>
     <link rel="shortcut icon" href="#">
@@ -19,6 +21,7 @@
             <li><a href="#top" class="hover:text-black">Home</a></li>
             <li><a href="#about" class="hover:text-black">About Me</a></li>
             <li><a href="#project" class="hover:text-black">My Projects</a></li>
+            <li><a href="blogs.html" class="hover:text-black">Blogs</a></li>
             <li><a href="#contact" class="hover:text-black">Contact</a></li>
         </ul>
         <!--Connect Linkedin Button-->
@@ -43,6 +46,7 @@
             <li><a href="#top" onclick="closeMenu()">Home</a></li>
             <li><a href="#about" onclick="closeMenu()">About Me</a></li>
             <li><a href="#project" onclick="closeMenu()">My Projects</a></li>
+            <li><a href="blogs.html" onclick="closeMenu()">Blogs</a></li>
             <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
             <li><a href="https://www.linkedin.com/in/adithya-s-nair-63153626b">Connect<ion-icon name="logo-linkedin" class="w-10"></ion-icon></a></li>
         </ul>
@@ -161,7 +165,7 @@
                         <h2 class="font-semibold text-gray-300">Weather App Project</h2>
                         <p class="text-sm text-gray-900">Python-Django & Tailwind CSS</p>
                     </div>
-                    <div class="flex items-center justify-center group-hover:text-black">
+                    <div class="flex items-center justify-center">
                         <ion-icon name="eye"></ion-icon>
                     </div>
                 </div>
@@ -176,7 +180,7 @@
                         <h2 class="font-semibold text-gray-300">Tours & Travels Management</h2>
                         <p class="text-sm text-gray-900">PHP Project</p>
                     </div>
-                    <div class="flex items-center justify-center group-hover:text-black">
+                    <div class="flex items-center justify-center">
                         <ion-icon name="eye"></ion-icon>
                     </div>
                 </div>
@@ -191,7 +195,7 @@
                         <h2 class="font-semibold text-gray-300">Basic Calculator</h2>
                         <p class="text-sm text-gray-900">Java Project</p>
                     </div>
-                    <div class="flex items-center justify-center group-hover:text-black">
+                    <div class="flex items-center justify-center">
                         <ion-icon name="eye"></ion-icon>
                     </div>
                 </div>
@@ -206,7 +210,7 @@
                         <h2 class="font-semibold text-gray-300">AI Chatbot</h2>
                         <p class="text-sm text-gray-900">ChatGPT powered AI Bot</p>
                     </div>
-                    <div class="flex items-center justify-center group-hover:text-black">
+                    <div class="flex items-center justify-center">
                         <ion-icon name="eye"></ion-icon>
                     </div>
                 </div>
@@ -222,19 +226,18 @@
 
     <!--Contact-->
     <div id="contact" class="w-full px-[12%] py-10 scroll-mt-20  text-white">
-        <div class="w-full rounded-lg p-4 bg-gradient-to-r from-[#6ff7e8] to-[#1f7ea1]">
-        <h4 class="text-center mb-2 text-lg">How to</h4>
-        <h2 class="text-center text-5xl">Contact Me ?</h2>
+        <div class="w-full rounded-lg p-4 bg-violet-800/40 backdrop-blur">
+        <h2 class="text-center mt-3 text-5xl">Contact Me</h2>
         <p class="text-center max-w-2xl mx-auto mt-5 mb-12">Get in touch with me easily by sending a message!</p>
 
         <form action="https://api.web3forms.com/submit" method="POST" class="max-w-2xl mx-auto ">
             <input type="hidden" name="access_key" value="9e41b104-1570-4d8c-97eb-52634f3fa118">
             <div class="grid grid-cols-2 gap-6 mt-10 mb-8">
-                <input type="text" required name="name" placeholder="Enter Your Name" class="flex-1 p-3 outline-none rounded-md bg-blue-700/65 backdrop-blur">
-                <input type="email" required name="email" placeholder="Enter Your Email" class="flex-1 p-3 outline-none rounded-md bg-blue-700/65 backdrop-blur">
+                <input type="text" required name="name" placeholder="Enter Your Name" class="flex-1 p-3 outline-none rounded-md bg-blue-600/50 backdrop-blur">
+                <input type="email" required name="email" placeholder="Enter Your Email" class="flex-1 p-3 outline-none rounded-md bg-blue-600/50 backdrop-blur">
             </div>
-            <textarea rows="6" name="message" required placeholder="Enter your message" class="w-full p-4 outline-none rounded-md bg-blue-700/65 backdrop-blur"></textarea>
-            <button type="submit" class="py-3 px-8 mt-4 w-max flex items-center justify-between gap-2 mx-auto bg-gradient-to-r from-[#b820e6] to-[#da7d20]
+            <textarea rows="6" name="message" required placeholder="Enter your message" class="w-full p-4 outline-none rounded-md bg-blue-600/50 backdrop-blur"></textarea>
+            <button type="submit" class="py-3 px-8 mt-4 mb-3 w-max flex items-center justify-between gap-2 mx-auto bg-gradient-to-r from-[#b820e6] to-[#da7d20]
             backdrop-blur border rounded-full hover:-translate-y-1 duration-500 hover:text-black">Send</button>
         </form>
         </div>
