@@ -1,303 +1,281 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="vZ4RaZeeMzBej-Ir3DmAzNjQe2MnGIcU44Cve4IB1Vw" />
-    <title>Adithya S Nair</title>
-    <link rel="icon" type="image/x-icon" href="./images/Adithya-Profile.png">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./tailwind.config.js"></script>
-    <link rel="shortcut icon" href="#">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adithya S Nair | 桜 Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--washi:#f8f1ea;--paper:#fffaf5;--sumi:#1d1a22;--ink2:#4a4452;--shu:#c8322b;--sakura:#f4b6c6;--sakura2:#e98aa5;--indigo:#232a4d;--dusk:#3b3563;--gold:#c9a24b;--line:#e3d3c6}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;background:var(--washi);color:var(--sumi);line-height:1.8;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:"Shippori Mincho","Yu Mincho","Hiragino Mincho ProN",serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--shu);outline-offset:3px}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:.8rem 5vw;background:rgba(35,42,77,.82);backdrop-filter:blur(8px);color:#fff}
+nav .logo{font-family:"Shippori Mincho",serif;font-weight:800;font-size:1.15rem;text-decoration:none}
+nav .logo b{color:var(--sakura)}
+nav ul{display:flex;gap:1.4rem;list-style:none;padding:0;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:.9rem}
+nav ul a:hover{color:var(--sakura)}
+nav ul a small{display:block;font-size:.65rem;opacity:.7;text-align:center;line-height:1.1}
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:7rem 5vw 14rem;color:#fff;background:linear-gradient(180deg,#232a4d 0%,#4b3f78 38%,#c76f8d 72%,#f6b9a6 100%);overflow:hidden}
+.sun{position:absolute;right:12vw;top:16vh;width:min(26vw,260px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#fff3e6,#ffd2c4 60%,#f7a6a0);box-shadow:0 0 90px 30px rgba(255,200,190,.4)}
+.hero-grid{position:relative;z-index:3;display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center;max-width:1100px;margin:0 auto;width:100%}
+.hero h1{font-size:clamp(2.6rem,7vw,5.2rem);line-height:1.1;font-weight:800}
+.hero .jp{font-size:1.2rem;letter-spacing:.35em;color:var(--sakura);margin-bottom:.6rem}
+.hero .role{font-size:1.1rem;margin:1rem 0 .4rem;max-width:36ch}
+.hero .tags{font-size:.95rem;opacity:.9;max-width:44ch}
+.cta{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.75rem 1.6rem;border:2px solid #fff;text-decoration:none;font-weight:700;border-radius:2px;transition:.25s}
+.btn.fill{background:var(--shu);border-color:var(--shu)}
+.btn:hover{background:#fff;color:var(--shu)}
+.frame{position:relative;justify-self:center;width:min(290px,70vw);aspect-ratio:3/4;border-radius:150px 150px 6px 6px;border:6px solid var(--paper);background:linear-gradient(160deg,#f4b6c6,#e98aa5);box-shadow:0 0 0 3px var(--shu),0 24px 50px rgba(0,0,0,.35);overflow:hidden;display:grid;place-items:center}
+.frame::before{content:"顔";position:absolute;font-family:"Shippori Mincho",serif;font-size:7rem;color:rgba(255,255,255,.55)}
+.frame img{position:relative;width:100%;height:100%;object-fit:cover;display:block}
+.frame img:not([src]),.frame img[src=""]{opacity:0}
+.seal{position:absolute;right:-6px;bottom:-6px;width:56px;height:56px;background:var(--shu);color:#fff;display:grid;place-items:center;font-family:"Shippori Mincho",serif;font-weight:800;font-size:1.7rem;border-radius:4px;transform:rotate(-6deg);z-index:2}
+.castle{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(900px,120vw);z-index:2}
+.hills{position:absolute;bottom:0;left:0;width:100%;z-index:1}
+.mist{position:absolute;left:0;right:0;bottom:60px;height:90px;background:linear-gradient(0deg,rgba(255,240,235,.55),transparent);z-index:2}
+/* petals */
+#petals{position:fixed;inset:0;pointer-events:none;z-index:15;overflow:hidden}
+.petal{position:absolute;top:-30px;width:12px;height:9px;background:linear-gradient(135deg,#ffd7e2,#f08fae);border-radius:100% 0 100% 0;opacity:.85;animation:fall linear infinite}
+@keyframes fall{to{transform:translate3d(var(--dx),110vh,0) rotate(720deg)}}
+/* sections */
+section{padding:6rem 5vw;position:relative}
+.wrap{max-width:1000px;margin:0 auto}
+.sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:2.5rem;border-bottom:2px solid var(--shu);padding-bottom:.6rem}
+.sec-head .k{font-family:"Shippori Mincho",serif;font-size:2.6rem;font-weight:800;color:var(--shu);line-height:1}
+.sec-head h2{font-size:1.5rem;font-weight:600}
+.about{background:var(--paper);background-image:radial-gradient(circle at 100% 0,rgba(244,182,198,.35),transparent 40%)}
+.about p{max-width:68ch;margin-bottom:1rem;color:var(--ink2)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem}
+.fact{border-left:4px solid var(--sakura2);padding:.4rem 1rem;background:var(--washi)}
+.fact b{display:block;font-family:"Shippori Mincho",serif;font-size:1.05rem}
+.fact span{font-size:.9rem;color:var(--ink2)}
+.skills{background:var(--washi);background-image:repeating-radial-gradient(circle at 0 100%,transparent 0 14px,rgba(35,42,77,.05) 15px 16px)}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem}
+.scroll{background:var(--paper);border:1px solid var(--line);border-top:8px solid var(--indigo);padding:1.4rem;position:relative}
+.scroll:nth-child(even){border-top-color:var(--shu)}
+.scroll h3{font-size:1.2rem;margin-bottom:.6rem}
+.scroll h3 small{color:var(--shu);margin-left:.4rem;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chips span{font-size:.85rem;padding:.15rem .7rem;background:#fbe4ea;border-radius:20px;color:#7a2a45}
+.exp{background:var(--indigo);color:#fff;background-image:linear-gradient(180deg,#232a4d,#2f2a55)}
+.exp .sec-head{border-color:var(--sakura)}
+.exp .sec-head .k{color:var(--sakura)}
+.timeline{position:relative;padding-left:2rem;border-left:3px dashed var(--sakura2)}
+.tl{position:relative;margin-bottom:2rem}
+.tl::before{content:"";position:absolute;left:-2.75rem;top:.45rem;width:1.2rem;height:1.2rem;border-radius:50%;background:var(--shu);border:3px solid #fff}
+.tl h3{font-size:1.3rem}
+.tl .when{color:var(--sakura);font-size:.9rem}
+.tl p{opacity:.88;max-width:62ch}
+.works{background:var(--paper)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.6rem}
+.card{display:flex;flex-direction:column;background:var(--washi);border:2px solid var(--sumi);box-shadow:8px 8px 0 var(--sakura);padding:1.5rem;transition:.25s}
+.card:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--sakura2)}
+.card .ic{display:flex;gap:1rem;align-items:center;margin-bottom:1rem}
+.card .ic img{width:56px;height:56px;border-radius:14px;object-fit:cover;background:var(--sakura)}
+.card h3{font-size:1.3rem}
+.card .meta{font-size:.85rem;color:var(--shu)}
+.card p{color:var(--ink2);flex:1;margin-bottom:1rem}
+.card a.l{font-weight:700;color:var(--shu);text-decoration:none}
+.card a.l:hover{text-decoration:underline}
+.oss{background:linear-gradient(135deg,#fbe4ea,#f8f1ea)}
+.oss p{max-width:66ch;color:var(--ink2);margin-bottom:1rem}
+.badge{display:inline-block;margin:.4rem .6rem .4rem 0;padding:.5rem 1.2rem;border:2px solid var(--shu);color:var(--shu);font-weight:700;background:var(--paper)}
+.contact{background:var(--sumi);color:#fff;text-align:center;overflow:hidden}
+.contact .sec-head{justify-content:center;border-color:var(--sakura)}
+.contact .sec-head .k{color:var(--sakura)}
+.contact p{max-width:48ch;margin:0 auto 1.8rem;opacity:.85}
+.links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.links a{padding:.7rem 1.4rem;border:2px solid var(--sakura);text-decoration:none;color:var(--sakura);font-weight:700;transition:.25s}
+.links a:hover{background:var(--sakura);color:var(--sumi)}
+.torii{width:90px;margin:3rem auto 0;display:block}
+footer{background:#120f16;color:#b9aebd;text-align:center;padding:1.4rem;font-size:.85rem}
+@media(max-width:780px){.hero-grid{grid-template-columns:1fr;text-align:center}.hero .role,.hero .tags{margin-inline:auto}.cta{justify-content:center}.frame{order:-1;width:min(220px,60vw)}.sun{right:6vw;top:10vh}nav{padding:.7rem 5vw}.menu-btn{display:block}nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:rgba(35,42,77,.97);padding:.5rem 0}nav ul.open{display:flex}nav ul li a{display:flex;justify-content:space-between;padding:.8rem 5vw;font-size:1rem}nav ul a small{font-size:.8rem}.hero{padding:6rem 6vw 10rem}section{padding:4rem 6vw}.sec-head .k{font-size:2.1rem}.timeline{padding-left:1.5rem}.tl::before{left:-2.15rem}.castle{width:150vw}.btn{padding:.7rem 1.3rem}.link-tiles{grid-template-columns:1fr}}
+.menu-btn{display:none;background:none;border:2px solid var(--sakura);color:var(--sakura);font-size:1.3rem;line-height:1;padding:.3rem .6rem;border-radius:4px;cursor:pointer}
+.link-tiles{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+.tile{display:block;text-decoration:none;background:var(--washi);border:2px solid var(--sumi);box-shadow:8px 8px 0 var(--sakura);padding:1.6rem;transition:.25s}
+.tile:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--sakura2)}
+.tile .kj{font-family:"Shippori Mincho",serif;font-size:2.2rem;font-weight:800;color:var(--shu);line-height:1}
+.tile h3{font-size:1.35rem;margin:.5rem 0 .3rem}
+.tile p{color:var(--ink2);margin-bottom:.8rem}
+.tile .go{font-weight:700;color:var(--shu);word-break:break-all}
+.tile:hover .go{text-decoration:underline}
+@media(prefers-reduced-motion:reduce){.petal{animation:none}html{scroll-behavior:auto}}
+</style>
 </head>
-<body class="bg-violet-950 overflow-x-hidden">
-    <!--Navbar-->
-    <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
-        <a href="#top"><img src="./images/Adithya-Logo.png" alt="logo" class="w-24 cursor-pointer mr-14 "></a>
-        <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-gradient-to-l from-[#b820e6] to-[#da7d20] backdrop-blur text-white">
-            <li><a href="#top" class="hover:text-black">Home</a></li>
-            <li><a href="#about" class="hover:text-black">About Me</a></li>
-            <li><a href="#project" class="hover:text-black">My Projects</a></li>
-            <li><a href="blogs.html" class="hover:text-black">Blogs</a></li>
-            <li><a href="#contact" class="hover:text-black">Contact</a></li>
-        </ul>
-        <!--Connect Linkedin Button-->
-        <div class="flex items-center gap-4 hover:-translate-y-1 duration-500">
-            <a href="https://www.linkedin.com/in/adithya-s-nair-63153626b" class="hidden lg:flex items-center gap-3 px-6 py-2.5 border border-gray-600 bg-gray-800/50 backdrop-blur 
-            hover:bg-[#fcf4ff]/20 hover:-translate-y-1 duration-500 rounded-full ml-4 text-white">Connect<ion-icon name="logo-linkedin" class="w-10"></ion-icon></a>
-            
-            <!--Menu Button-->
-            <button class="block md:hidden ml-3" onclick="openMenu()">
-                <ion-icon class="w-10 text-white" name="grid-outline"></ion-icon>
-            </button>
-        </div>
+<body>
+<div id="petals" aria-hidden="true"></div>
 
-        <!--For Mobile View-->
-        <ul id="sideBar" class="flex md:hidden flex-col gap-4 py-20 px-5 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-gradient-to-l from-[#b820e6] to-[#da7d20] transition duration-500 text-white">
-            
-            <!--Close Menu Button-->
-            <div class="absolute right-5 top-6" onclick="closeMenu()">
-                <ion-icon class="w-10 cursor-pointer" name="close-outline"></ion-icon>
-            </div>
-            
-            <li><a href="#top" onclick="closeMenu()">Home</a></li>
-            <li><a href="#about" onclick="closeMenu()">About Me</a></li>
-            <li><a href="#project" onclick="closeMenu()">My Projects</a></li>
-            <li><a href="blogs.html" onclick="closeMenu()">Blogs</a></li>
-            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-            <li><a href="https://www.linkedin.com/in/adithya-s-nair-63153626b">Connect<ion-icon name="logo-linkedin" class="w-10"></ion-icon></a></li>
-        </ul>
-    </nav>
-    <!--Nav done here-->
+<nav>
+  <a class="logo" href="#top"><b>桜</b> Adithya</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <ul id="menu">
+    <li><a href="#about">About<small>自己紹介</small></a></li>
+    <li><a href="#skills">Skills<small>技術</small></a></li>
+    <li><a href="#experience">Journey<small>経歴</small></a></li>
+    <li><a href="#works">Works<small>作品</small></a></li>
+    <li><a href="#contact">Contact<small>連絡</small></a></li>
+  </ul>
+</nav>
 
-    <!--Header Section-->
-    <div class="w-11/12 max-w-3xl text-center text-white mx-auto h-screen flex flex-col items-center justify-center gap-4">
-        <img src="./images/Adithya-Profile.png" alt="profile" class="rounded-full w-44">
-        <h2 class="flex items-center gap-2 text-xl md:text-2xl mb-1">Hey! I'm Adithya</h2>
-        <h1 class="text-3xl sm:text-6xl lg:text-[66px]">Software Developer</h1>
-        <p class="max-w-2xl mx-auto">I'm a Python Django Developer from India, I'm an Open Source Contributor and <br>I'm currently pursuing Masters in Computer Applications.</p>
-
-        <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
-            <a href="#contact" class="px-10 py-3 rounded-full bg-gradient-to-r from-[#b820e6] to-[#da7d20] border hover:bg-white hover:text-black hover:-translate-y-1 duration-500 flex items-center gap-2">Contact Me
-                <ion-icon name="mail" class="w-5"></ion-icon>
-            </a>
-
-            <a href="./AdithyaSNair-CV.pdf" download class="px-10 py-3 rounded-full border hover:bg-white hover:text-black hover:-translate-y-1 duration-500 flex items-center gap-2">My Resume
-                <ion-icon name="cloud-download" class="w-5"></ion-icon>
-            </a>
-        </div>
+<header class="hero" id="top">
+  <div class="sun"></div>
+  <div class="hero-grid">
+    <div>
+      <p class="jp">開発者 ・ アディティヤ</p>
+      <h1>Adithya S Nair</h1>
+      <p class="role serif">Associate Developer at EY</p>
+      <p class="tags">.NET Core · Angular · SQL · Java<br>Open Source Contributor &amp; Mentor · GSSoC’24 · MCA Graduate</p>
+      <div class="cta">
+        <a class="btn fill" href="https://aadhi-i.github.io/Dev-Store/">View my work</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
     </div>
-    <!--Header completed-->
-
-    <!--About Me-->
-
-    <div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
-        <h4 class="text-center text-white text-lg mb-2">Introduction</h4>
-        <h2 class="text-center text-white text-5xl ">About Me</h2>
-
-        <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20 text-white">
-            <!--Left-->
-            <div class="max-w-max mx-auto relative">
-                <img src="./images/Adithya-about.jpg" alt="about" class="w-56 sm:w-80 rounded-full max-w-none">
-            </div>
-
-            <!--Right-->
-            <div class="flex-1">
-                <p class="mb-10 max-w-2xl font-semibold">Hello World,<br><br>
-
-                    I'm an aspiring developer who is in search of more technological knowledge. I have already set my sail in the ocean of tech by self-learning and creating projects.
-                    I an very enthusiastic about tech and always looked at everything with curiosity. Coding is kind of my hobby now.
-                    Thanks to my OCD I always keep my code clean and readable, I literally can't overlook a misplaced piece of code ! <br>
-                    I am an Open Source Contributor. Contributed in GirlScript Summer of Code 2024.<br>
-                    I am familiar with Core Java and OOPs. <br>
-                    I am able to develop and integrate AI based chatbots into websites.
-                    <br>
-                    Looking forward to how far this tech journey can take me...</p>
-                    
-                    <ul class="grid grid-cols-1 sm:grid-cols-auto gap-6 max-w-3xl">
-
-                        <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff]/20 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#fff]">
-                            <ion-icon name="code-slash-outline" class="mt-3"></ion-icon>
-                            <h3 class="my-4 font-semibold text-gray-200">Languages, Frameworks & Tech Skills</h3>
-                            <p class="text-gray-300 text-sm">Python, Django, Java, PHP, HTML, TailwindCSS, Bootstrap, C++, Git, MySQL, Linux</p>
-                        </li>
-                    
-                        <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff]/20 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#fff]">
-                            <ion-icon name="school" class="mt-3"></ion-icon>
-                            <h3 class="my-4 font-semibold text-gray-200">Education</h3>
-                            <p class="text-gray-300 text-sm">2024 - Present : Pursuing MCA at Muthoot Institute of Technology and Science.<br>
-                                <br>2021 - 2024 : BCA Graduate from Mahatma Gandhi University. <br>CGPA : 8.61</p>
-                        </li>
-
-                        <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff]/20 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#fff]">
-                            <ion-icon name="bag" class="mt-3"></ion-icon>
-                            <h3 class="my-4 font-semibold text-gray-200">Experience</h3>
-                            <p class="text-gray-300 text-sm">Python-Django Intern : 1 Month <br><br>Freelancing Designer & Contet Writer : 2021 - Present</p>
-                        </li>
-                    </ul>
-
-                    <h4 class="my-6 text-gray-300">Tools I Use</h4>
-                    <ul class="flex items-center gap-3 sm:gap-5">
-                       
-                        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:bg-[#fcf4ff]/20 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#fff]">
-                            <img src="./images/python.png" alt="" class="w-5 sm:w-7">
-                        </li>
-
-                        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:bg-[#fcf4ff]/20 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#fff]">
-                            <img src="./images/django.png" alt="" class="w-5 sm:w-7">
-                        </li>
-
-                        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:bg-[#fcf4ff]/20 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#fff]">
-                            <img src="./images/git.png" alt="" class="w-5 sm:w-7">
-                        </li>
-
-                        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:bg-[#fcf4ff]/20 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#fff]">
-                            <img src="./images/java.png" alt="" class="w-5 sm:w-7">
-                        </li>
-
-                        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:bg-[#fcf4ff]/20 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#fff]">
-                            <img src="./images/tailwind.png" alt="" class="w-5 sm:w-7">
-                        </li>
-
-                        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:bg-[#fcf4ff]/20 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#fff]">
-                            <img src="./images/c++.png" alt="" class="w-5 sm:w-7">
-                        </li>
-                    </ul>
-            </div>
-        </div>
+    <div class="frame">
+      <!-- ▼ PUT YOUR PROFILE PICTURE URL IN src BELOW ▼ -->
+      <img src="./images/Adithya-Profile.png" alt="Portrait of Adithya S Nair">
+      <div class="seal">桜</div>
     </div>
-    <!--About ended-->
+  </div>
 
-    <!--My Projects-->
-    <div id="project" class="w-full px-[12%] py-10 scroll-mt-20 text-white">
-        <h4 class="text-center mb-2 text-lg">My Portfolio</h4>
-        <h2 class="text-center text-5xl">My Latest Projects</h2>
-        <p class="text-center max-w-2xl mx-auto mt-5 mb-12">Welcome to My Portfolio! Explore a collection of projects showcasing my expertise!</p>
-        <!--Project 1-->
-        <div class="grid sm:grid-cols-auto my-10 gap-5">
-            <div class="aspect-square bg-[url(./images/goat.png)] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
-                <a href="https://goatgptai.vercel.app">
-                <div class="bg-gradient-to-r from-[#b820e6]/70 backdrop-blur w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-                    <div>
-                        <h2 class="font-semibold text-gray-300">GOAT AI</h2>
-                        <p class="text-sm text-gray-400">Highly intelligent chatbot which can reply based on previous question.</p>
-                    </div>
-                    <div class="flex items-center justify-center">
-                        <ion-icon name="eye"></ion-icon>
-                    </div>
-                </div>
-                </a>
-            </div>
-       
-            <!--Project 2-->
-            <div class="aspect-square bg-[url(./images/weather.png)] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
-                <a href="https://aadhi22.pythonanywhere.com/">
-                <div class="bg-gradient-to-r from-[#b820e6]/70 backdrop-blur w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-                    <div>
-                        <h2 class="font-semibold text-gray-300">Weather App Project</h2>
-                        <p class="text-sm text-gray-400">Python-Django & Tailwind CSS</p>
-                    </div>
-                    <div class="flex items-center justify-center">
-                        <ion-icon name="eye"></ion-icon>
-                    </div>
-                </div>
-                </a>
-            </div>
+  <!-- distant mountains -->
+  <svg class="hills" viewBox="0 0 1200 160" preserveAspectRatio="none" height="150" aria-hidden="true">
+    <path d="M0 160V90Q120 30 260 80T520 70T800 85T1050 50T1200 80V160Z" fill="#6a4a7c" opacity=".55"/>
+    <path d="M0 160V120Q200 70 380 115T760 110T1200 105V160Z" fill="#3d2f5c"/>
+  </svg>
+  <div class="mist"></div>
 
+  <!-- Japanese castle -->
+  <svg class="castle" viewBox="0 0 600 300" aria-hidden="true">
+    <!-- pine trees -->
+    <g fill="#1d2a3a"><path d="M40 300l22-80 22 80zM62 300l22-110 22 110z" opacity=".9"/><path d="M500 300l22-100 22 100zM530 300l22-70 22 70z" opacity=".9"/></g>
+    <!-- stone base -->
+    <polygon points="110,300 170,228 430,228 490,300" fill="#4e4a58"/>
+    <g stroke="#3a3643" stroke-width="1.5" fill="none"><path d="M150 252H450M130 276H470M230 228v24M330 228v24M190 252v24M290 252v24M390 252v24M160 276v24M260 276v24M360 276v24M440 276v24"/></g>
+    <!-- tier 1 -->
+    <rect x="190" y="194" width="220" height="36" fill="#f6efe6"/>
+    <g fill="#2b2733"><rect x="215" y="204" width="14" height="18"/><rect x="262" y="204" width="14" height="18"/><rect x="324" y="204" width="14" height="18"/><rect x="371" y="204" width="14" height="18"/></g>
+    <path d="M150 196Q205 192 222 172H378Q395 192 450 196Z" fill="#2b3340"/>
+    <!-- tier 2 -->
+    <rect x="222" y="144" width="156" height="30" fill="#f6efe6"/>
+    <g fill="#2b2733"><rect x="250" y="152" width="12" height="16"/><rect x="294" y="152" width="12" height="16"/><rect x="338" y="152" width="12" height="16"/></g>
+    <path d="M186 146Q235 142 250 124H350Q365 142 414 146Z" fill="#2b3340"/>
+    <!-- tier 3 -->
+    <rect x="252" y="104" width="96" height="22" fill="#f6efe6"/>
+    <g fill="#2b2733"><rect x="270" y="109" width="10" height="13"/><rect x="320" y="109" width="10" height="13"/></g>
+    <path d="M218 106Q262 102 274 84H326Q338 102 382 106Z" fill="#2b3340"/>
+    <!-- top -->
+    <rect x="274" y="68" width="52" height="16" fill="#f6efe6"/>
+    <rect x="292" y="71" width="16" height="11" fill="#2b2733"/>
+    <path d="M244 70Q283 66 292 48H308Q317 66 356 70Z" fill="#2b3340"/>
+    <path d="M300 48l-6-12 6-14 6 14z" fill="#c9a24b"/>
+    <!-- gold edge accents -->
+    <g stroke="#c9a24b" stroke-width="2" fill="none"><path d="M150 196Q205 192 222 172M450 196Q395 192 378 172"/></g>
+    <!-- sakura trees -->
+    <g><rect x="76" y="238" width="6" height="62" fill="#3b2a2a"/><circle cx="79" cy="226" r="30" fill="#f4b6c6"/><circle cx="58" cy="240" r="20" fill="#e98aa5"/><circle cx="100" cy="242" r="22" fill="#f8c9d5"/>
+    <rect x="518" y="248" width="6" height="52" fill="#3b2a2a"/><circle cx="521" cy="236" r="28" fill="#f4b6c6"/><circle cx="500" cy="250" r="18" fill="#f8c9d5"/><circle cx="542" cy="250" r="20" fill="#e98aa5"/></g>
+  </svg>
+</header>
 
-            <!--Project 3-->
-            <div class="aspect-square bg-[url(./images/tour.jpg)] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
-                <a href="https://github.com/aadhi-i/PHP_Project-Tourism_Management">
-                <div class="bg-gradient-to-r from-[#b820e6]/70 backdrop-blur w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-                    <div>
-                        <h2 class="font-semibold text-gray-300">Tours & Travels Management</h2>
-                        <p class="text-sm text-gray-400">PHP Project</p>
-                    </div>
-                    <div class="flex items-center justify-center">
-                        <ion-icon name="eye"></ion-icon>
-                    </div>
-                </div>
-                </a>
-            </div>
-
-            <!--Project 4-->
-            <div class="aspect-square bg-[url(./images/calc.png)] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
-                <a href="https://github.com/aadhi-i/Basic-Calculator--Java">
-                <div class="bg-gradient-to-r from-[#b820e6]/70 backdrop-blur w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-                    <div>
-                        <h2 class="font-semibold text-gray-300">Basic Calculator</h2>
-                        <p class="text-sm text-gray-400">Java Project</p>
-                    </div>
-                    <div class="flex items-center justify-center">
-                        <ion-icon name="eye"></ion-icon>
-                    </div>
-                </div>
-                </a>
-            </div>
-        </div>
-            <!--ends-->
-        </div>
-        <a href="https://github.com/aadhi-i" class="w-max flex items-center justify-center gap-2 text-gray-300 border
-        bg-gradient-to-r from-[#b820e6] to-[#da7d20] backdrop-blur rounded-full py-3 px-10 mx-auto my-20 text-xl 
-        hover:-translate-y-1 duration-500 hover:text-black">Show More</a>
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="sec-head"><span class="k">我</span><h2>About me · 自己紹介</h2></div>
+    <p>I’m an Associate Developer at EY, building enterprise applications with .NET Core, Angular and SQL. I enjoy turning messy requirements into clean, dependable software.</p>
+    <p>Outside work I build apps and tools that solve real problems, the kind of things I wish existed. I also contribute to open source and mentor other developers, including through GirlScript Summer of Code 2024. I completed my BCA (2021–2024) and MCA (2024–2026), and joined EY in January 2026.</p>
+    <div class="facts">
+      <div class="fact"><b>Associate Developer</b><span>EY</span></div>
+      <div class="fact"><b>MCA · 2024–2026</b><span>Master of Computer Applications</span></div>
+      <div class="fact"><b>BCA · 2021–2024</b><span>Bachelor of Computer Applications</span></div>
+      <div class="fact"><b>GSSoC’24</b><span>Open source contributor &amp; mentor</span></div>
+      <div class="fact"><b>Kerala, India</b><span>Always open to collaborate</span></div>
     </div>
-    <!--My projects completed-->
+  </div>
+</section>
 
-    <!--Contact-->
-    <div id="contact" class="w-full px-[12%] py-10 scroll-mt-20  text-white">
-        <div class="w-full rounded-lg p-4 bg-violet-800/40 backdrop-blur">
-        <h2 class="text-center mt-3 text-5xl">Contact Me</h2>
-        <p class="text-center max-w-2xl mx-auto mt-5 mb-12">Get in touch with me easily by sending a message!</p>
-
-        <form action="https://api.web3forms.com/submit" method="POST" class="max-w-2xl mx-auto ">
-            <input type="hidden" name="access_key" value="9e41b104-1570-4d8c-97eb-52634f3fa118">
-            <div class="grid grid-cols-2 gap-6 mt-10 mb-8">
-                <input type="text" required name="name" placeholder="Enter Your Name" class="flex-1 p-3 outline-none rounded-md bg-blue-600/50 backdrop-blur">
-                <input type="email" required name="email" placeholder="Enter Your Email" class="flex-1 p-3 outline-none rounded-md bg-blue-600/50 backdrop-blur">
-            </div>
-            <textarea rows="6" name="message" required placeholder="Enter your message" class="w-full p-4 outline-none rounded-md bg-blue-600/50 backdrop-blur"></textarea>
-            <button type="submit" class="py-3 px-8 mt-4 mb-3 w-max flex items-center justify-between gap-2 mx-auto bg-gradient-to-r from-[#b820e6] to-[#da7d20]
-            backdrop-blur border rounded-full hover:-translate-y-1 duration-500 hover:text-black">Send</button>
-        </form>
-        </div>
+<section class="skills" id="skills">
+  <div class="wrap">
+    <div class="sec-head"><span class="k">技</span><h2>Skills · 技術</h2></div>
+    <div class="skill-grid">
+      <div class="scroll"><h3>Backend<small>裏</small></h3><div class="chips"><span>.NET Core</span><span>C#</span><span>Java</span><span>REST APIs</span></div></div>
+      <div class="scroll"><h3>Frontend<small>表</small></h3><div class="chips"><span>Angular</span><span>TypeScript</span><span>HTML</span><span>CSS</span></div></div>
+      <div class="scroll"><h3>Data<small>知</small></h3><div class="chips"><span>SQL</span><span>Database design</span></div></div>
+      <div class="scroll"><h3>Community<small>和</small></h3><div class="chips"><span>Open source</span><span>Mentoring</span><span>Git &amp; GitHub</span></div></div>
     </div>
-    <!--Contact ends here-->
+  </div>
+</section>
 
-    <!--Footer-->
-    <div class="mt-20">
-        <div class="text-center text-white">
-            <img src="./images/Adithya-Logo.png" alt="" class="w-28 mx-auto mb-2">
-            <div class="w-max flex items-center gap-2 mx-auto">
-                <ion-icon name="mail"></ion-icon>
-                adithyasnair25@gmail.com
-            </div>
-        </div>
-
-        <div class="text-center text-white sm:flex items-center justify-between border-t border-gray-300 mx-[10%] mt-12 py-6">
-            <p>© 2024 Adithya S Nair. All Rights Reserved</p>
-            <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
-                <li><a href="https://www.linkedin.com/in/adithya-s-nair-63153626b"><ion-icon name="logo-linkedin"></ion-icon> LinkedIn</a></li>
-                <li><a href="https://github.com/aadhi-i"><ion-icon name="logo-github"></ion-icon> GitHub</a></li>
-                <li><a href="https://x.com/adithyasnair33?t=sg-79s_7Iojjn2wJQvkTig&s=09"><ion-icon name="logo-twitter"></ion-icon> Twitter</a></li>
-            </ul>
-        </div>
+<section class="exp" id="experience">
+  <div class="wrap">
+    <div class="sec-head"><span class="k">道</span><h2>Journey · 経歴</h2></div>
+    <div class="timeline">
+      <div class="tl"><h3>Associate Developer · EY</h3><div class="when">August 2026 – Present</div><p>Promoted to Associate, building applications with .NET Core, Angular and SQL.</p></div>
+      <div class="tl"><h3>Intern · EY</h3><div class="when">January 2026 – August 2026</div><p>Joined EY as an intern and worked on real projects alongside the team.</p></div>
+      <div class="tl"><h3>MCA · Master of Computer Applications</h3><div class="when">2024 – 2026</div><p>Went deeper into software engineering, databases and application development.</p></div>
+      <div class="tl"><h3>Open Source Contributor &amp; Mentor · GSSoC’24</h3><div class="when">2024 – 2025</div><p>Contributed to open source projects and guided newcomers through their first contributions.</p></div>
+      <div class="tl"><h3>BCA · Bachelor of Computer Applications</h3><div class="when">2021 – 2024</div><p>Learned the fundamentals of programming, databases and web development.</p></div>
     </div>
+  </div>
+</section>
 
-    
-    <script>
-        
-        const sideBar= document.querySelector('#sideBar');
-        const navBar= document.querySelector("nav");
-        const navLinks= document.querySelector("nav ul");
+<section class="works" id="works">
+  <div class="wrap">
+    <div class="sec-head"><span class="k">作</span><h2>Works · 作品</h2></div>
+    <div class="link-tiles">
+      <a class="tile" href="https://github.com/aadhi-i/"><span class="kj">码</span><h3>GitHub</h3><p>Source code, open source contributions and experiments.</p><span class="go">github.com/aadhi-i</span></a>
+      <a class="tile" href="https://aadhi-i.github.io/Dev-Store/"><span class="kj">店</span><h3>Dev Store</h3><p>My apps for Android and the web, including NDate and Bankai.</p><span class="go">aadhi-i.github.io/Dev-Store</span></a>
+    </div>
+  </div>
+</section>
 
-        //Giving Function to the Menu Button
-        function openMenu(){
-            sideBar.style.transform='translateX(-16rem)';
-        }
+<section class="oss" id="opensource">
+  <div class="wrap">
+    <div class="sec-head"><span class="k">縁</span><h2>Open source · オープンソース</h2></div>
+    <p>I believe in learning in public. From 2024 to 2025, as a GSSoC’24 contributor and mentor, I helped others make their first pull requests and ship real features.</p>
+    <span class="badge">GSSoC’24</span><span class="badge">Contributor</span><span class="badge">Mentor</span><span class="badge">2024–2025</span>
+  </div>
+</section>
 
-        function closeMenu(){
-            sideBar.style.transform='translateX(16rem)';
-        }
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head"><span class="k">会</span><h2>Contact · 連絡</h2></div>
+    <p>Have an idea, want to collaborate, or just want to say hello? Reach out on any of these.</p>
+    <div class="links">
+      <a href="https://github.com/aadhi-i/">GitHub</a>
+      <a href="https://www.linkedin.com/in/adithya-s-nair33/">LinkedIn</a>
+      <a href="https://x.com/adithyasnair33">X / Twitter</a>
+    </div>
+    <svg class="torii" viewBox="0 0 100 80" aria-hidden="true"><g fill="#c8322b"><path d="M2 14Q50 24 98 14L94 24Q50 32 6 24Z"/><rect x="14" y="30" width="72" height="6"/><rect x="20" y="22" width="8" height="58"/><rect x="72" y="22" width="8" height="58"/><rect x="45" y="22" width="10" height="10"/></g></svg>
+  </div>
+</section>
 
-        //navbar effect on scroll
-        window.addEventListener('scroll',()=>{
-            if(scrollY > 50){
-                navBar.classList.add('bg-violet-900/40','backdrop-blur','shadow-sm');
-                navLinks.classList.remove('bg-gradient-to-l','from-[#b820e6]','to-[#da7d20]','backdrop-blur','rounded-full');
-            }
-            else{
-                navBar.classList.remove('bg-violet-900/40','backdrop-blur','shadow-sm');
-                navLinks.classList.add('bg-gradient-to-l','from-[#b820e6]','to-[#da7d20]','backdrop-blur','rounded-full');
-            }
-        })        
+<footer>© 2026 Adithya S Nair · 桜の下で作りました</footer>
 
-    </script>
-
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+var mb=document.getElementById('menuBtn'),mn=document.getElementById('menu');
+mb.addEventListener('click',function(){var o=mn.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+mn.addEventListener('click',function(e){if(e.target.closest('a')){mn.classList.remove('open');mb.setAttribute('aria-expanded',false)}});
+(function(){
+  var box=document.getElementById('petals');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  for(var i=0;i<28;i++){
+    var p=document.createElement('span');p.className='petal';
+    var s=.6+Math.random()*.9;
+    p.style.left=Math.random()*100+'vw';
+    p.style.transform='scale('+s+')';
+    p.style.setProperty('--dx',(Math.random()*160-40)+'px');
+    p.style.animationDuration=(9+Math.random()*10)+'s';
+    p.style.animationDelay=(-Math.random()*18)+'s';
+    box.appendChild(p);
+  }
+})();
+</script>
 </body>
 </html>
